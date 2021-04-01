@@ -46,7 +46,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-libignition--launch3-green.svg)](https://anaconda.org/conda-forge/libignition-launch3) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libignition-launch3.svg)](https://anaconda.org/conda-forge/libignition-launch3) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libignition-launch3.svg)](https://anaconda.org/conda-forge/libignition-launch3) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libignition-launch3.svg)](https://anaconda.org/conda-forge/libignition-launch3) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libignition--launch4-green.svg)](https://anaconda.org/conda-forge/libignition-launch4) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libignition-launch4.svg)](https://anaconda.org/conda-forge/libignition-launch4) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libignition-launch4.svg)](https://anaconda.org/conda-forge/libignition-launch4) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libignition-launch4.svg)](https://anaconda.org/conda-forge/libignition-launch4) |
 
 Installing libignition-launch
 =============================
@@ -57,16 +57,16 @@ Installing `libignition-launch` from the `conda-forge` channel can be achieved b
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `libignition-launch3` can be installed with:
+Once the `conda-forge` channel has been enabled, `libignition-launch4` can be installed with:
 
 ```
-conda install libignition-launch3
+conda install libignition-launch4
 ```
 
-It is possible to list all of the versions of `libignition-launch3` available on your platform with:
+It is possible to list all of the versions of `libignition-launch4` available on your platform with:
 
 ```
-conda search libignition-launch3 --channel conda-forge
+conda search libignition-launch4 --channel conda-forge
 ```
 
 
