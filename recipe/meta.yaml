@@ -33,19 +33,19 @@ requirements:
     - {{ cdt('libxext') }}     # [linux]
   host:
     - libignition-cmake2
-    - tinyxml2
-    - libignition-common3
+    - libignition-common4
     - libignition-plugin1
     - libignition-tools1
-    - libignition-transport9
-    - libignition-msgs6
+    - libignition-transport10
+    - libignition-msgs7
     - libignition-math6
-    - libignition-gui4
+    - libignition-gui5
+    - libignition-gazebo5
+    - tinyxml2
     - qt
-    - libignition-gazebo4
     - libwebsockets
     - libprotobuf
-    - libsdformat10
+    - libsdformat11
     - xorg-libxfixes  # [linux]
 test:
   commands:
