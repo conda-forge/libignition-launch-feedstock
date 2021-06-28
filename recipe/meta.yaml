@@ -1,6 +1,6 @@
 {% set component_name = "launch" %}
 {% set base_name = "libignition-" + component_name %}
-{% set version = "3.1.1" %}
+{% set version = "4.0.0" %}
 {% set major_version = version.split('.')[0] %}
 {% set name = base_name + major_version %}
 
@@ -10,7 +10,7 @@ package:
 
 source:
   - url: https://github.com/ignitionrobotics/ign-{{ component_name }}/archive/ignition-{{ component_name }}{{ major_version }}_{{ version }}.tar.gz
-    sha256: 9da81f6113839af88a14a5ddc6c853f002326b00cdaa18e913153dd38ce060a3
+    sha256: e2e71bc96630b46663dfa8d12dd7d2dd8f2573ad893f608f6c5c2c08bd39c896
 
 build:
   number: 0
@@ -33,21 +33,20 @@ requirements:
     - {{ cdt('libxext') }}     # [linux]
   host:
     - libignition-cmake2
-    - tinyxml2
-    - libignition-common3
+    - libignition-common4
     - libignition-plugin1
-    - libignition-tools1 
-    - libignition-transport9
-    - libignition-msgs6
+    - libignition-tools1
+    - libignition-transport10
+    - libignition-msgs7
     - libignition-math6
-    - libignition-gui4
+    - libignition-gui5
+    - libignition-gazebo5
+    - tinyxml2
     - qt
-    - libignition-gazebo4
     - libwebsockets
     - libprotobuf
-    - libsdformat10
+    - libsdformat11
     - xorg-libxfixes  # [linux]
-    
 test:
   commands:
     - test -f ${PREFIX}/include/ignition/{{ component_name }}{{ major_version }}/ignition/{{ component_name }}.hh  # [not win]
