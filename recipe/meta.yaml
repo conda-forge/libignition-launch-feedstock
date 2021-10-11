@@ -43,7 +43,7 @@ requirements:
     - libignition-gazebo6
     - tinyxml2
     - qt
-    - libwebsockets
+    - libwebsockets  # [linux]
     - libprotobuf
     - libsdformat12
     - xorg-libxfixes  # [linux]
