@@ -12,9 +12,11 @@ package:
 source:
   - url: https://github.com/ignitionrobotics/ign-{{ component_name }}/archive/ignition-{{ component_name }}{{ version }}.tar.gz
     sha256: fa9195039ba1393cc675bdbdba7f2f60e17979709c0db397396478f52ca38d3f
+    patches:
+      - unvendor_backward.patch
 
 build:
-  number: 2
+  number: 3
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
 
@@ -41,6 +43,7 @@ requirements:
     - libignition-math6
     - libignition-gui6
     - libignition-gazebo6
+    - backward-cpp
     - tinyxml2
     - qt
     - libwebsockets  # [linux]
