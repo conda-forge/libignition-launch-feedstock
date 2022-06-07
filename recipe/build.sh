@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Make sure vendor libraries are not accidentally used
+rm -rf ./src/vendor
+
 mkdir build
 cd build
 
@@ -13,6 +16,10 @@ cmake ${CMAKE_ARGS} \
       -DBUILD_TESTING=OFF \
       ..
 
+cat CMakeCache.txt
+
 cmake --build . --config Release
 cmake --build . --config Release --target install
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
 ctest --output-on-failure -C Release
+fi

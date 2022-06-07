@@ -12,3 +12,17 @@ index 77cb6c3..9fa7cb4 100644
  
  #============================================================================
  # Add plugins
+
+diff --git a/src/Manager.cc b/src/Manager.cc
+index 4e17272..f1e990f 100644
+--- a/src/Manager.cc
++++ b/src/Manager.cc
+@@ -59,7 +59,7 @@
+ #include "ignition/launch/config.hh"
+ #include "ignition/launch/Plugin.hh"
+ 
+-#include "vendor/backward.hpp"
++#include "backward.hpp"
+ 
+ using namespace ignition::launch;
+ using namespace std::chrono_literals;
