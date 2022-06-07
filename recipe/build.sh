@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Make sure vendor libraries are not accidentally used
+rm -rf ./src/vendor
+
 mkdir build
 cd build
 
