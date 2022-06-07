@@ -16,6 +16,8 @@ cmake ${CMAKE_ARGS} \
       -DBUILD_TESTING=OFF \
       ..
 
+cat CMakeCache.txt
+
 cmake --build . --config Release
 cmake --build . --config Release --target install
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
