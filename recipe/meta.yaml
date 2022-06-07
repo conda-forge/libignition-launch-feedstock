@@ -16,7 +16,7 @@ source:
       - unvendor_backward.patch
 
 build:
-  number: 4
+  number: 5
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
 
@@ -45,7 +45,7 @@ requirements:
     - libignition-gazebo6
     - backward-cpp
     - tinyxml2
-    - qt
+    - qt-main
     - libwebsockets  # [linux]
     - libprotobuf
     - libsdformat12
