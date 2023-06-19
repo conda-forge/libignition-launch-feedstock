@@ -47,6 +47,7 @@ requirements:
     - tinyxml2
     - qt-main
     - libwebsockets  # [linux]
+    - libabseil
     - libprotobuf
     - libsdformat12
     - xorg-libxfixes  # [linux]
