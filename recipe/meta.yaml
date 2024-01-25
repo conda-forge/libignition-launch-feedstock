@@ -16,9 +16,11 @@ source:
       - unvendor_backward.patch
 
 build:
-  number: 11
+  number: 12
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
+  # see https://github.com/conda-forge/libignition-gazebo-feedstock/pull/59#issuecomment-1902107706
+  skip: true  # [win]
 
 requirements:
   build:
