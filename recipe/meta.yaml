@@ -1,6 +1,6 @@
 {% set component_name = "launch" %}
 {% set base_name = "libignition-" + component_name %}
-{% set version = "5_5.0.0" %}
+{% set version = "5_5.3.0" %}
 {% set version_package = version.split('_')[1] %}
 {% set major_version = version.split('_')[0] %}
 {% set name = base_name + major_version %}
@@ -17,7 +17,7 @@ source:
       - 299.patch
 
 build:
-  number: 21
+  number: 0
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
   # see https://github.com/conda-forge/libignition-gazebo-feedstock/pull/59#issuecomment-1902107706
