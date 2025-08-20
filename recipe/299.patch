@@ -1,7 +1,7 @@
-From f07d85c28e7dde3a2e7b4d408ce122afce086d29 Mon Sep 17 00:00:00 2001
+From 5c85196a794d9682a80e3bc8c36cb174a6c0ec2b Mon Sep 17 00:00:00 2001
 From: Silvio Traversaro <silvio.traversaro@iit.it>
-Date: Wed, 30 Jul 2025 14:20:30 +0200
-Subject: [PATCH] Fix compatibility with protobuf v30 (cpp 6.30.0)
+Date: Wed, 30 Jul 2025 19:54:47 +0200
+Subject: [PATCH] Fix compatibility with protobuf v30 (cpp 6.30.0) (#299)
 
 Signed-off-by: Silvio Traversaro <silvio.traversaro@iit.it>
 ---
@@ -9,11 +9,11 @@ Signed-off-by: Silvio Traversaro <silvio.traversaro@iit.it>
  1 file changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/plugins/websocket_server/WebsocketServer.cc b/plugins/websocket_server/WebsocketServer.cc
-index a828c84..46985ac 100644
+index d713a9f..58ce8ea 100644
 --- a/plugins/websocket_server/WebsocketServer.cc
 +++ b/plugins/websocket_server/WebsocketServer.cc
-@@ -1055,7 +1055,7 @@ void WebsocketServer::OnRequest(int _socketId,
-     gz::msgs::StringMsg msg;
+@@ -1032,7 +1032,7 @@ void WebsocketServer::OnRequest(int _socketId,
+     ignition::msgs::StringMsg msg;
      msg.set_data("service_not_found");
      std::string data = BUILD_MSG(this->operations[REQUEST], service,
 -        msg.GetTypeName(), msg.SerializeAsString());
@@ -21,8 +21,8 @@ index a828c84..46985ac 100644
  
      // Queue the message for delivery.
      this->QueueMessage(this->connections[_socketId].get(),
-@@ -1094,7 +1094,7 @@ void WebsocketServer::OnAsset(int _socketId,
-     gz::msgs::StringMsg msg;
+@@ -1071,7 +1071,7 @@ void WebsocketServer::OnAsset(int _socketId,
+     ignition::msgs::StringMsg msg;
      msg.set_data("asset_uri_missing");
      std::string data = BUILD_MSG(this->operations[ASSET], "",
 -        msg.GetTypeName(), msg.SerializeAsString());
@@ -30,7 +30,7 @@ index a828c84..46985ac 100644
  
      // Queue the message for delivery.
      this->QueueMessage(this->connections[_socketId].get(),
-@@ -1140,7 +1140,7 @@ void WebsocketServer::OnAsset(int _socketId,
+@@ -1117,7 +1117,7 @@ void WebsocketServer::OnAsset(int _socketId,
  
      // Construct the response message
      std::string data = BUILD_MSG(this->operations[ASSET], assetUri,
@@ -39,12 +39,12 @@ index a828c84..46985ac 100644
  
      // Queue the message for delivery.
      this->QueueMessage(this->connections[_socketId].get(),
-@@ -1151,7 +1151,7 @@ void WebsocketServer::OnAsset(int _socketId,
-     gz::msgs::StringMsg msg;
+@@ -1129,7 +1129,7 @@ void WebsocketServer::OnAsset(int _socketId,
+     ignition::msgs::StringMsg msg;
      msg.set_data("asset_not_found");
      std::string data = BUILD_MSG(this->operations[ASSET], assetUri,
 -        msg.GetTypeName(), msg.SerializeAsString());
 +        std::string(msg.GetTypeName()), msg.SerializeAsString());
- 
      // Queue the message for delivery.
      this->QueueMessage(this->connections[_socketId].get(),
+         data.c_str(), data.length());
