@@ -11,7 +11,7 @@ package:
 
 source:
   - url: https://github.com/ignitionrobotics/ign-{{ component_name }}/archive/ignition-{{ component_name }}{{ version }}.tar.gz
-    sha256: ea24652682d78881d6f172ca582b63586157d77c85e45ba554f38b7eef63065b
+    sha256: 663777d640a041782be53446220dcec05195b3bbbd4a16ca3341e5a6cf8bb148
     patches:
       - unvendor_backward.patch
       - 299.patch
