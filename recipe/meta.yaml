@@ -1,6 +1,6 @@
 {% set component_name = "launch" %}
 {% set base_name = "libignition-" + component_name %}
-{% set version = "5_5.0.0" %}
+{% set version = "5_5.3.0" %}
 {% set version_package = version.split('_')[1] %}
 {% set major_version = version.split('_')[0] %}
 {% set name = base_name + major_version %}
@@ -11,12 +11,13 @@ package:
 
 source:
   - url: https://github.com/ignitionrobotics/ign-{{ component_name }}/archive/ignition-{{ component_name }}{{ version }}.tar.gz
-    sha256: ea24652682d78881d6f172ca582b63586157d77c85e45ba554f38b7eef63065b
+    sha256: 663777d640a041782be53446220dcec05195b3bbbd4a16ca3341e5a6cf8bb148
     patches:
       - unvendor_backward.patch
+      - 299.patch
 
 build:
-  number: 20
+  number: 0
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
   # see https://github.com/conda-forge/libignition-gazebo-feedstock/pull/59#issuecomment-1902107706
@@ -31,12 +32,6 @@ requirements:
     - make  # [not win]
     - cmake
     - pkg-config
-    - {{ cdt('mesa-libgl-devel') }}  # [linux]
-    - {{ cdt('mesa-dri-drivers') }}  # [linux]
-    - {{ cdt('libselinux') }}  # [linux]
-    - {{ cdt('libxdamage') }}  # [linux]
-    - {{ cdt('libxxf86vm') }}  # [linux]
-    - {{ cdt('libxext') }}     # [linux]
   host:
     - libignition-cmake2
     - libignition-common4
@@ -51,6 +46,7 @@ requirements:
     - tinyxml2
     - qt-main
     - libwebsockets  # [linux]
+    - libgl-devel  # [linux]
     - libabseil
     - libprotobuf
     - libsdformat12
